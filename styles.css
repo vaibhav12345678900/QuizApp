@@ -1,0 +1,457 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.eot");
+    src: local(""),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.eot?iefix") format("embedded-opentype"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.woff2") format("woff2"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.woff") format("woff"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.ttf") format("truetype"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.svg#SourceSansPro") format("svg"),
+}
+
+
+body {
+    font-size: 14px;
+    font-family: "Source Sans Pro";
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+button {
+    color: #fff;
+}
+
+/* 
+    Header styles
+*/
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: 0 3px 7px #00000031;
+}
+header h2 {
+    color: rgb(88, 63, 255);
+    display: flex;
+    margin-left: 15%;
+    align-items: center;
+}
+header h2 img {
+    margin-right: 10px;
+}
+header h2 p {
+    padding: 0;
+    margin: 0;
+}
+header #toggleMenu {
+    display: none;
+}
+header .mode {
+    display: flex;
+    z-index: 4;
+    margin-right: 15%;
+}
+header .mode h4 i {
+    color: gold;
+}
+header .mode h4 {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #97979716;
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+    cursor: pointer;
+}
+header #mode__selector {
+    position: absolute;
+    display: none;
+    padding: 10px 0;
+    top: 100%;
+    width: 120px;
+    border-radius: 3px;
+    background-color: #fff;
+    right: 20%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.149);
+}
+header #mode__selector.active {
+    display: block;
+}
+header #mode__selector p {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 15px;
+}
+header #mode__selector p.active,
+header #mode__selector p:hover {
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+}
+
+section {
+    display: flex;
+    margin-top: 80px;
+    padding: 0 15%;
+    background-color:rgba(31, 30, 30, 0.111)
+}
+section h3 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 5px 5px 0 0;
+}
+section h3 i {
+    padding: 5px;
+    background: #b3bbc82c;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: orange;
+}
+section aside {
+    padding: 30px 20px;
+    margin: 10px;
+    min-width: 30%;
+    background-color: rgb(237, 238, 242);
+    border: 1px solid rgba(0, 0, 0, 0.094);
+}
+section aside:nth-child(2) {
+    padding: 10px;
+    margin: 10px;
+    background-color: #f3f3f3;
+    color: rgb(37, 41, 55);
+    position: relative;
+    flex: 1;
+}
+section aside h4 {
+    margin: 10px;
+}
+
+section aside select {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.149);
+    border: 1px solid rgba(0, 0, 0, 0.149);
+    border-radius: 5px;
+}
+aside .action {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #c2c5d04b;
+    border-radius: 5px;
+}
+
+aside .scoreheader {
+    display: flex;
+    padding: 10px 20px;
+    background-color: rgb(88, 63, 255);
+    color: #e4e4e4;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+aside .test__status {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgba(5, 5, 118, 0.17);
+    background-color: #fff;
+}
+aside .test {
+    padding: 10px;
+    overflow: hidden;
+}
+aside .test h1 {
+    padding: 10px;
+    background-color: #c0c4d316;
+    line-height: 26px;
+}
+aside label {
+    display: flex;
+    align-items: center;
+    background-color: #c0c4d316;
+    padding: 15px 10px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+aside label:hover {
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+}
+aside label.correct {
+    background-color: rgba(0, 249, 0, 0.385);
+}
+aside label.wrong {
+    background-color: rgba(255, 0, 0, 0.594);
+}
+aside label input {
+    margin-right: 10px;
+}
+aside .buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+aside .buttons button {
+    width: 50%;
+}
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(88, 63, 255);
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(150, 3, 81);
+    transition: 0.5s;
+}
+aside:nth-child(3) {
+    background-color: rgb(37, 41, 55);
+    color: rgb(198, 199, 219);
+}
+aside:nth-child(3) button {
+    margin-top: 30px;
+}
+aside .scoreboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.903);
+    width: 90%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5%;
+    transition: 0.6s;
+}
+aside #clear {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgb(150, 3, 81);
+}
+@keyframes scale {
+    from {
+        width: 30%;
+        height: 30%;
+        opacity: 1;
+    }
+    to {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+thead,tbody, th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #c0c4d316;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead {
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+/*
+    Loader
+*/
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.loading .loader {
+    content: "";
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 3px solid #f3f3f3;
+    border-top-color: rgb(88, 63, 255);
+    border-radius: 50%;
+    animation: 0.6s rotate ease-in infinite;
+}
+@keyframes rotate {
+    from { rotate: 0deg; }
+    to { rotate: 350deg; }
+}
+
+
+/*
+    Splash screens
+*/
+.splash {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.splash.closed {
+    opacity: 0;
+    animation: 1s close linear;
+}
+@keyframes close {
+    from { opacity: 1; }
+    to {
+        opacity: 0;
+    }
+}
+.splash h1 {
+    font-size: 25px;
+    color: rgb(88, 63, 255);
+}
+.splash .splash__screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff url("../imgs/screen.png");
+    background-size: 100%;
+}
+.splash .splash__screen img {
+    border-radius: 50%;
+    border: 3px solid rgb(88, 63, 255);
+}
+.splash .splash__screen input {
+    margin: 30px 0 10px 0;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #c0c4d316;
+    text-align: center;
+}
+
+
+/* 
+    Darkmode
+*/
+.dark {
+    background-color: rgb(37, 41, 55);
+}
+.dark .mode h4 {
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+}
+.dark header,
+.dark aside,
+.dark aside:nth-child(2) {
+    background-color: rgb(34, 37, 50);
+    color: rgb(198, 199, 219);
+}
+.dark aside .test__status {
+    background-color: #8b92a916;
+    color: rgb(198, 199, 219);
+}
+.dark .loading,
+.dark .splash .splash__screen,
+.dark .scoreboard,
+.dark section .action,
+.dark #mode__selector,
+.dark section option {
+    background-color: rgb(39, 42, 57);
+}
+.dark input,
+.dark input::placeholder,
+.dark section aside select {
+    color: #e4e4e4;
+}
+
+
+/*
+    Make UI responsive
+*/
+
+@media (max-width: 900px) {
+    header h2{
+        margin-left: 20px;
+    }
+    header .mode {
+        margin-right: 20px;
+    }
+    header #toggleMenu {
+        display: block;
+        margin: 5px 20px;
+    }
+    header h2 p {
+        display: none;
+    }
+    section {
+        padding: 5%;
+        flex-wrap: wrap;
+    }
+    section aside {
+        width: 100%;
+    }
+    section aside:nth-child(2) {
+        width: 100%;
+        margin: 10px;
+    }
+    .sidebar {
+        width: 0%;
+        min-width: 0%;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+        transition: 0.5s;
+    }
+    .sidebar .action {
+        margin: 20px;
+    }
+    .sidebar button#clear {
+        margin: 20px;
+        width: 92%;
+    }
+    .sidebar.hide {
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    header {
+        padding: 5px 2%;
+    }
+    header .mode h4.menu-button {
+        display: block;
+    }
+    section {
+        padding: 0;
+    }
+    section aside {
+        padding: 10px;
+        margin: 0;
+    }
+}
+
